@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { frontloadConnect } from 'react-frontload';
-import Page from '../../components/page';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { frontloadConnect } from "react-frontload";
+import Page from "../../components/page";
 
 import {
   getCurrentProfile,
   removeCurrentProfile
-} from '../../../modules/profile';
+} from "../../../reducers/profile";
 
 const frontload = async props =>
   await props.getCurrentProfile(+props.match.params.id);
@@ -41,7 +41,7 @@ class Profile extends Component {
         <p>
           <b>ID:</b> {id}
         </p>
-        <img src={image} alt={name} style={{ width: '400px' }} />
+        <img src={image} alt={name} style={{ width: "400px" }} />
       </Page>
     );
   }

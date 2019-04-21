@@ -1,12 +1,12 @@
-import { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { logoutUser } from '../../../modules/auth';
+import { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { logoutUser } from "../../../reducers/auth";
 
 class Logout extends Component {
   componentWillMount() {
     this.props.logoutUser();
-    this.props.history.push('/');
+    this.props.history.push("/");
   }
 
   render() {
