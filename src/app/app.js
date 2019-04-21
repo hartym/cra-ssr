@@ -36,7 +36,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 const mapDispatchToProps = dispatch =>
@@ -45,6 +45,6 @@ const mapDispatchToProps = dispatch =>
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
-  )(App)
+    mapDispatchToProps,
+  )(App),
 );

@@ -6,7 +6,7 @@ import Page from "../../components/page";
 
 import {
   getCurrentProfile,
-  removeCurrentProfile
+  removeCurrentProfile,
 } from "../../../reducers/profile";
 
 const frontload = async props =>
@@ -48,7 +48,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentProfile: state.profile.currentProfile
+  currentProfile: state.profile.currentProfile,
 });
 
 const mapDispatchToProps = dispatch =>
@@ -56,10 +56,10 @@ const mapDispatchToProps = dispatch =>
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(
   frontloadConnect(frontload, {
     onMount: true,
-    onUpdate: false
-  })(Profile)
+    onUpdate: false,
+  })(Profile),
 );

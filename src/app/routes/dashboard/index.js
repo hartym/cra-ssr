@@ -22,10 +22,10 @@ const Dashboard = ({ currentUser }) => (
 );
 
 const mapStateToProps = state => ({
-  currentUser: state.auth.currentUser
+  currentUser: state.auth.currentUser,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(Dashboard);

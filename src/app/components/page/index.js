@@ -29,9 +29,9 @@ class Page extends Component {
       published,
       updated,
       category,
-      tags
+      tags,
     },
-    pathname
+    pathname,
   ) {
     const theTitle = title
       ? (title + defaultSep + defaultTitle).substring(0, 60)
@@ -58,7 +58,7 @@ class Page extends Component {
       { property: "og:image", content: theImage },
       { property: "og:description", content: theDescription },
       { property: "og:site_name", content: defaultTitle },
-      { property: "fb:app_id", content: FACEBOOK_APP_ID }
+      { property: "fb:app_id", content: FACEBOOK_APP_ID },
     ];
 
     if (noCrawl) {
@@ -90,7 +90,7 @@ class Page extends Component {
           htmlAttributes={{
             lang: "en",
             itemscope: undefined,
-            itemtype: `http://schema.org/${rest.schema || "WebPage"}`
+            itemtype: `http://schema.org/${rest.schema || "WebPage"}`,
           }}
           title={
             rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle
@@ -98,8 +98,8 @@ class Page extends Component {
           link={[
             {
               rel: "canonical",
-              href: SITE_URL + this.props.location.pathname
-            }
+              href: SITE_URL + this.props.location.pathname,
+            },
           ]}
           meta={this.getMetaTags(rest, this.props.location.pathname)}
         />

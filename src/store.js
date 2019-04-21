@@ -15,7 +15,7 @@ export default (url = "/") => {
   // Create a history depending on the environment
   const history = isServer
     ? createMemoryHistory({
-        initialEntries: [url]
+        initialEntries: [url],
       })
     : createBrowserHistory();
 
@@ -33,7 +33,7 @@ export default (url = "/") => {
   const middleware = [thunk, routerMiddleware(history)];
   const composedEnhancers = compose(
     applyMiddleware(...middleware),
-    ...enhancers
+    ...enhancers,
   );
 
   // Do we have preloaded state available? Great, save it.
@@ -48,14 +48,14 @@ export default (url = "/") => {
   const store = createStore(
     combineReducers({
       router: connectRouter(history),
-      ...reducers
+      ...reducers,
     }),
     initialState,
-    composedEnhancers
+    composedEnhancers,
   );
 
   return {
     store,
-    history
+    history,
   };
 };

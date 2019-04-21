@@ -21,10 +21,10 @@ const UnauthenticatedRoute = ({ component: Component, ...rest }) => {
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(UnauthenticatedRoute);

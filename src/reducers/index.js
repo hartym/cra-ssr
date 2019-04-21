@@ -3,5 +3,5 @@ import profile from "./profile";
 
 export default {
   auth,
-  profile
+  profile,
 };

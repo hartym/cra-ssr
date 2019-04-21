@@ -5,7 +5,7 @@ export const SET_CURRENT_USER = "auth/SET_CURRENT_USER";
 
 const initialState = {
   isAuthenticated: false,
-  currentUser: {}
+  currentUser: {},
 };
 
 export default (state = initialState, action) => {
@@ -13,13 +13,13 @@ export default (state = initialState, action) => {
     case AUTHENTICATE:
       return {
         ...state,
-        isAuthenticated: action.authenticated
+        isAuthenticated: action.authenticated,
       };
 
     case SET_CURRENT_USER:
       return {
         ...state,
-        currentUser: action.user
+        currentUser: action.user,
       };
 
     default:
@@ -31,14 +31,14 @@ export const setCurrentUser = user => dispatch =>
   new Promise(resolve => {
     dispatch({
       type: SET_CURRENT_USER,
-      user
+      user,
     });
 
     Cookies.set("mywebsite", user);
 
     dispatch({
       type: AUTHENTICATE,
-      authenticated: true
+      authenticated: true,
     });
 
     resolve(user);
@@ -61,7 +61,7 @@ export const loginUser = (email, password) => dispatch =>
     const user = {
       email,
       password,
-      name: "Awesome User"
+      name: "Awesome User",
     };
 
     dispatch(setCurrentUser(user));
@@ -72,12 +72,12 @@ export const logoutUser = () => dispatch =>
   new Promise(resolve => {
     dispatch({
       type: AUTHENTICATE,
-      authenticated: false
+      authenticated: false,
     });
 
     dispatch({
       type: SET_CURRENT_USER,
-      user: {}
+      user: {},
     });
 
     Cookies.remove("mywebsite");

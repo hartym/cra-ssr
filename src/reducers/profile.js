@@ -4,7 +4,7 @@ import arvidsson from "../app/assets/arvidsson.jpg";
 export const SET_CURRENT_PROFILE = "auth/SET_CURRENT_PROFILE";
 
 const initialState = {
-  currentProfile: {}
+  currentProfile: {},
 };
 
 export default (state = initialState, action) => {
@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     case SET_CURRENT_PROFILE:
       return {
         ...state,
-        currentProfile: action.profile
+        currentProfile: action.profile,
       };
 
     default:
@@ -29,19 +29,19 @@ export const getCurrentProfile = id => dispatch =>
         profile = {
           id,
           name: "Pekka Rinne",
-          image: pekka
+          image: pekka,
         };
       } else {
         profile = {
           id,
           name: "Viktor Arvidsson",
-          image: arvidsson
+          image: arvidsson,
         };
       }
 
       dispatch({
         type: SET_CURRENT_PROFILE,
-        profile
+        profile,
       });
 
       resolve(profile);
@@ -52,7 +52,7 @@ export const removeCurrentProfile = () => dispatch =>
   new Promise(resolve => {
     dispatch({
       type: SET_CURRENT_PROFILE,
-      profile: {}
+      profile: {},
     });
 
     resolve({});
