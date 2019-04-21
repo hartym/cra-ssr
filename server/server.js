@@ -4,7 +4,6 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 import path from "path";
-import forceDomain from "forcedomain";
 import Loadable from "react-loadable";
 import cookieParser from "cookie-parser";
 
@@ -25,6 +24,7 @@ const PORT = process.env.PORT || 3000;
 
   Resolve to: https://www.mydomain.com
 */
+// import forceDomain from "forcedomain";
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(
 //     forceDomain({
